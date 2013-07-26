@@ -97,12 +97,14 @@ RTC::ReturnCode_t ConsoleInput::onShutdown(RTC::UniqueId ec_id)
 
 RTC::ReturnCode_t ConsoleInput::onActivated(RTC::UniqueId ec_id)
 {
+  std::cout << "[RTC::ConsoleInput] - Activated." << std::endl;
   return RTC::RTC_OK;
 }
 
 
 RTC::ReturnCode_t ConsoleInput::onDeactivated(RTC::UniqueId ec_id)
 {
+  std::cout << "[RTC::ConsoleInput] - Dectivated." << std::endl;
   return RTC::RTC_OK;
 }
 
@@ -110,7 +112,7 @@ RTC::ReturnCode_t ConsoleInput::onDeactivated(RTC::UniqueId ec_id)
 RTC::ReturnCode_t ConsoleInput::onExecute(RTC::UniqueId ec_id)
 {
   long data;
-  std::cout << "Input Number:" << std::ends;
+  std::cout << "[RTC::ConsoleInput] - Input Number:" << std::ends;
   std::cin >> data;
   m_out.data  = data;
   m_outOut.write();
